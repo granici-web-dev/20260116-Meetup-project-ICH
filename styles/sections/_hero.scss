@@ -1,0 +1,79 @@
+@use '../variables/colors';
+
+.hero-inner {
+  display: flex;
+  gap: 3.3rem;
+  align-items: center;
+  padding: 6rem 1rem;
+
+  @media (max-width: 862px) {
+    flex-wrap: wrap;
+    padding: 1.8rem 1rem;
+    gap: 0.5rem;
+  }
+}
+
+.hero-inner__info {
+  max-width: 37rem;
+}
+
+.hero-inner-info__title {
+  font-size: 2.6rem;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 862px) {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.hero-inner-info__description {
+  margin-bottom: 1.5rem;
+
+   @media (max-width: 862px) {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.hero-inner-info__link {
+  background-color: colors.$secondary-color;
+  color: colors.$white-color;
+  padding: 0.5rem 1rem; 
+  border-radius: 0.5rem;
+}
+
+.hero-inner-info__link:hover {
+  background-color: colors.$secondary-color__hover;
+}
+
+.mobile-hero-info-link {
+  display: none;
+}
+
+.hero-inner__item {
+  @media (max-width: 862px) {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 862px) {
+  .mobile-hero-info-link {
+    display: inline-flex;
+  }
+
+  .desktop-hero-info-link {
+    display: none;
+  }
+
+  .hero_info__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-inner__item > img {
+    width: 100%;
+  }
+}

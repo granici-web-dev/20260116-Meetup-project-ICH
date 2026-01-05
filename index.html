@@ -14,32 +14,43 @@
   </head>
   <body>
     <div class="app">
-
       <!-- NAV MENU -->
-       <nav class="nav-menu">
+      <nav class="nav-menu">
         <div class="nav-menu__inner">
           <div class="nav-menu-inner__left">
             <div class="nav-menu-inner-left__logo">
               <a href="/" class="nav-logo">
-                <img src="/images/Meetup_logo.svg" alt="Meetup logo">
+                <img src="/images/Meetup_logo.svg" alt="Meetup logo" />
               </a>
             </div>
             <div class="nav-menu__search desktop-form-search">
               <form class="form-menu-search">
-                <input type="search" class="search-input" name="search" placeholder="Search events">
-                <input type="text" class="search-city-input" name="city search" value="Mountain View, CA" >
-                <input type="submit" class="search-button" name="search button" value="">
+                <input
+                  type="search"
+                  class="search-input"
+                  name="search"
+                  placeholder="Search events"
+                />
+                <input
+                  type="text"
+                  class="search-city-input"
+                  name="city search"
+                  value="Mountain View, CA"
+                />
+                <input type="submit" class="search-button" name="search button" value="" />
               </form>
             </div>
           </div>
           <div class="nav-menu-inner__right">
             <div class="nav-menu-inner-right__language">
               <div class="language-icon">
-                <img src="/images/icons/globus.svg" alt="Language icon" class="language-icon__img">
+                <img
+                  src="/images/icons/globus.svg"
+                  alt="Language icon"
+                  class="language-icon__img"
+                />
               </div>
-              <div class="language-title">
-                English
-              </div>
+              <div class="language-title">English</div>
             </div>
             <div class="nav-menu-inner-right__signin">
               <a href="#" class="sigin-button">Log in</a>
@@ -50,14 +61,48 @@
           </div>
         </div>
         <div class="nav-menu__search mobile-form-search">
-              <form class="form-menu-search">
-                <input type="text" class="search-input" placeholder="Search events">
-                <input type="submit" class="search-button" value="">
-              </form>
+          <form class="form-menu-search">
+            <input type="text" class="search-input" placeholder="Search events" />
+            <input type="submit" class="search-button" value="" />
+          </form>
+        </div>
+      </nav>
+
+      <!-- HERO SECTION -->
+      <main class="content">
+        <section class="hero">
+          <div class="container">
+
+            <div class="hero-inner">
+
+              <div class="hero-inner__info">
+                <h1 class="hero-inner-info__title">
+                  The people platform—Where interests become friendships
+                </h1>
+                <p class="hero-inner-info__description">
+                  Whatever your interest, from hiking and reading to networking and skill sharing,
+                  there are thousands of people who share it on Meetup. Events are happening every
+                  day—sign up to join the fun.
+                </p>
+                <a href="#" class="hero-inner-info__link desktop-hero-info-link">Join Meetup</a>
+              </div>
+
+             <div class="hero_info__wrapper">
+               <div class="hero-inner__item">
+                <img src="/images/hero_img.svg" alt="Hero image" class="hero-inner-item__img" />
+              </div>
+
+              <div class="hero-info-link mobile-hero-info-link">
+                <a href="#" class="hero-inner-info__link ">Join Meetup</a>
+              </div>
+             </div>
+              
+              </div>
+
             </div>
-       </nav>
-
-
+          </div>
+        </section>
+      </main>
     </div>
   </body>
   <script src="/scripts/script.js"></script>
