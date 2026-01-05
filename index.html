@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+
+      <!-- NAV MENU -->
+       <nav class="nav-menu">
+        <div class="nav-menu__inner">
+          <div class="nav-menu-inner__left">
+            <div class="nav-menu-inner-left__logo">
+              <a href="/" class="nav-logo">
+                <img src="/images/Meetup_logo.svg" alt="Meetup logo">
+              </a>
+            </div>
+            <div class="nav-menu__search desktop-form-search">
+              <form class="form-menu-search">
+                <input type="search" class="search-input" name="search" placeholder="Search events">
+                <input type="text" class="search-city-input" name="city search" value="Mountain View, CA" >
+                <input type="submit" class="search-button" name="search button" value="">
+              </form>
+            </div>
+          </div>
+          <div class="nav-menu-inner__right">
+            <div class="nav-menu-inner-right__language">
+              <div class="language-icon">
+                <img src="/images/icons/globus.svg" alt="Language icon" class="language-icon__img">
+              </div>
+              <div class="language-title">
+                English
+              </div>
+            </div>
+            <div class="nav-menu-inner-right__signin">
+              <a href="#" class="sigin-button">Log in</a>
+            </div>
+            <div class="nav-menu-inner-right__signup">
+              <a href="#" class="sigup-button">Sign up</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-menu__search mobile-form-search">
+              <form class="form-menu-search">
+                <input type="text" class="search-input" placeholder="Search events">
+                <input type="submit" class="search-button" value="">
+              </form>
+            </div>
+       </nav>
+
+
+    </div>
+  </body>
+  <script src="/scripts/script.js"></script>
+</html>

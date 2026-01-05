@@ -1,0 +1,142 @@
+@use '../variables/colors';
+
+.nav-menu__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  align-items: center;
+
+  @media (max-width: 426px) {
+    padding: 0.75rem 1rem;
+  }
+}
+
+.nav-menu-inner__left {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2.5rem;
+  align-items: center;
+  width: auto;
+}
+
+.nav-menu__search {
+  max-width: 36rem;
+  width: 100%;
+}
+
+.form-menu-search {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 0.8rem 1.5rem 0.8rem 2.3rem;
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border: 1px solid colors.$border-color;
+
+  background-image: url('/images/icons/search.svg');
+  background-repeat: no-repeat;
+  background-position: 0.75rem center;
+  background-size: 1.1rem;
+  max-width: 18.75rem;
+  width: 100%;
+}
+
+.search-input::placeholder {
+  color: #707070;
+  position: relative;
+}
+
+.search-city-input {
+  padding: 0.8rem 1.1rem;
+  border: 1px solid colors.$border-color;
+  margin-left: -5px;
+  max-width: 15.8rem;
+  width: 100%;
+}
+
+.search-button {
+  background-image: url('/images/icons/search-btn.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.25rem 1.25rem;
+
+  width: 2.68rem;
+  height: 2.68rem;
+  background-color: colors.$primary-color;
+  border: 1px solid colors.$primary-color;
+  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  cursor: pointer;
+  margin-left: -5px;
+  transition: all 0.3s ease;
+
+  flex-shrink: 0;
+}
+
+.search-button:hover {
+  background-color: colors.$primary-color__hover;
+}
+
+.nav-menu-inner__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  width: auto;
+  flex-shrink: 0;
+
+  @media (max-width: 840px) {
+    font-size: 0.75rem;
+  }
+}
+
+.nav-menu-inner-right__language{
+  display: flex;
+  font-weight: 500;
+  gap: 0.25rem;
+  cursor: pointer;
+
+}
+
+.language-title:hover {
+  color: colors.$primary-color;
+}
+
+.sigin-button {
+  color: colors.$font-color;
+}
+
+.sigin-button:hover {
+  color: colors.$primary-color;
+}
+
+.sigup-button {
+  color: colors.$white-color;
+  background-color: colors.$secondary-color;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.sigup-button:hover {
+  background-color: colors.$secondary-color__hover;
+}
+
+.mobile-form-search {
+  display: none;
+}
+
+@media (max-width: 840px) {
+  .mobile-form-search {
+    display: block;
+    padding: 0 1rem;
+  }
+
+  .desktop-form-search {
+    display: none;
+  }
+}
