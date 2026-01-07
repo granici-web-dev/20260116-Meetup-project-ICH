@@ -1,0 +1,189 @@
+@use '../variables/colors';
+
+.events-inner-near,
+.events-inner-upcoming {
+
+  @media (max-width: 1224px) {
+    padding: 0 1rem;
+  }
+}
+
+.events-inner__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.events-inner-header__left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.events-inner-header__left-title {
+  font-size: 1.75rem;
+
+  @media (max-width: 426px) {
+    font-size: 1.2rem;
+  }
+}
+
+.search_link {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: colors.$secondary-color-light;
+  border-radius: 0.5rem;
+
+  @media (max-width: 426px) {
+    padding: 0.5rem;
+  }
+}
+
+.city-search__link {
+  color: colors.$secondary-color;
+  font-weight: 600;
+  font-size: 1.25rem;
+
+  @media (max-width: 426px) {
+    font-size: 0.8rem;
+  }
+}
+
+.see-events__link {
+  color: colors.$secondary-color;
+  font-weight: 500;
+}
+
+.event-card__wrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2.25rem;
+  flex-wrap: wrap;
+
+   @media (max-width: 611px) {
+    gap: 1rem;
+  }
+}
+
+.event-card {
+  max-width: 17rem;
+  width: 100%;
+  margin-top: 1.5rem;
+
+  @media (max-width: 611px) {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: 37.5rem;
+    align-items: center;
+    border-top: 1px solid colors.$border-color;
+    padding-top: 0.8rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.event-card__info-wrapper {
+  margin-top: 0.5rem;
+
+  @media (max-width: 611px) {
+    margin-top: 0;
+  }
+}
+
+.event-card__cover__img {
+
+  @media (max-width: 611px) {
+    width: 160px;
+  }
+  
+}
+
+.event-card__info {
+  width: 100%;
+}
+
+.event-card__info__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: colors.$font-color;
+
+  @media (max-width: 611px) {
+    font-size: 0.8rem;
+  }
+}
+
+.event-card__info__category {
+  margin-top: 0.6rem;
+  color: colors.$grey-color;
+  font-size: 0.8rem;
+
+  @media (max-width: 611px) {
+    font-size: 0.6rem;
+    margin-top: 0.2rem;
+  }
+}
+
+.event-card-info-description__date {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.8rem;
+
+  span {
+    text-transform: uppercase;
+  }
+
+  img {
+    @media (max-width: 611px) {
+    width: 0.8rem;
+    }
+  }
+
+  @media (max-width: 611px) {
+    font-size: 0.6rem;
+    margin-top: 0.2rem;
+  }
+}
+
+.event-card-info-description__bottom {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.event-card-info-description__guests,
+.event-card-info-description__price {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.8rem;
+
+  span {
+  @media (max-width: 611px) {
+    font-size: 0.6rem;
+  }
+  }
+
+  @media (max-width: 611px) {
+    margin-top: 0.2rem;
+  }
+
+  img {
+    @media (max-width: 611px) {
+    width: 0.8rem;
+    }
+  }
+}
+
+.events-inner-upcoming {
+  margin-top: 2rem;
+}
+
+.mobile__see-events__link {
+
+  @media (max-width: 611px) {
+    display: none;
+  }
+}
