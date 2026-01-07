@@ -1,10 +1,14 @@
 @use '../variables/colors';
 
-.events-inner-near,
-.events-inner-upcoming {
+.events {
+  padding: 3rem 0;
+}
+
+.event-card__wrapper,
+.events-inner__header {
 
   @media (max-width: 1224px) {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 }
 
@@ -61,6 +65,7 @@
   justify-content: flex-start;
   gap: 2.25rem;
   flex-wrap: wrap;
+  margin-bottom: 3rem;
 
    @media (max-width: 611px) {
     gap: 1rem;

@@ -1,0 +1,95 @@
+@use '../variables/colors';
+
+.join-meetup {
+  @media (max-width: 1224px) {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+.join-meetup__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem 3.5rem;
+  align-items: center;
+  background-color: colors.$secondary-color-light;
+  border-radius: 0.5rem;
+  gap: 4.5rem;
+
+  
+
+  @media (max-width: 862px) {
+    flex-wrap: wrap;
+    padding: 1.8rem 1rem;
+    gap: 2rem;
+  }
+}
+
+.join-meetup__inner-info-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+
+  @media (max-width: 426px) {
+    font-size: 1.2rem;
+  }
+}
+
+.join-meetup__inner-info-description {
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 426px) {
+    font-size: 0.8rem;
+  }
+}
+
+.join-meetup__inner-info-link {
+  background-color: colors.$red-color;
+  color: colors.$white-color;
+  padding: 0.5rem 4rem;
+  border-radius: 0.5rem;
+
+  @media (max-width: 862px) {
+    margin: 0 auto;
+  }
+}
+
+.mobile-join-meetup__inner-img {
+  display: none;
+
+  @media (max-width: 862px) {
+      display: inline-flex;
+      margin: 0 auto;
+    }  
+}
+
+.descktop-join-meetup__inner-img {
+   @media (max-width: 862px) {
+      display: none;
+    }  
+}
+
+.join-meetup__inner-img {
+
+  img {
+     @media (max-width: 862px) {
+      width: 100%;
+    }  
+  }
+}
+
+.meetup-img__wrapper {
+  @media (max-width: 862px) {
+    display: flex;
+    margin: 1rem 0;
+  }
+}
+
+.join-meetup__btn {
+  @media (max-width: 862px) {
+    display: flex;
+    justify-self: center;
+  }
+}
+
+
+

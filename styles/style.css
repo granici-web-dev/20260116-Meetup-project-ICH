@@ -179,7 +179,7 @@ a {
 }
 @media (max-width: 1224px) {
   .hero-inner {
-    padding: 2.5rem 1rem;
+    padding: 2.5rem 1.5rem;
   }
 }
 @media (max-width: 862px) {
@@ -253,10 +253,14 @@ a {
     width: 100%;
   }
 }
+.events {
+  padding: 3rem 0;
+}
+
 @media (max-width: 1224px) {
-  .events-inner-near,
-  .events-inner-upcoming {
-    padding: 0 1rem;
+  .event-card__wrapper,
+  .events-inner__header {
+    padding: 0 1.5rem;
   }
 }
 
@@ -316,6 +320,7 @@ a {
   justify-content: flex-start;
   gap: 2.25rem;
   flex-wrap: wrap;
+  margin-bottom: 3rem;
 }
 @media (max-width: 611px) {
   .event-card__wrapper {
@@ -443,5 +448,96 @@ a {
 @media (max-width: 611px) {
   .mobile__see-events__link {
     display: none;
+  }
+}
+
+@media (max-width: 1224px) {
+  .join-meetup {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+.join-meetup__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem 3.5rem;
+  align-items: center;
+  background-color: #F3F9F9;
+  border-radius: 0.5rem;
+  gap: 4.5rem;
+}
+@media (max-width: 862px) {
+  .join-meetup__inner {
+    flex-wrap: wrap;
+    padding: 1.8rem 1rem;
+    gap: 2rem;
+  }
+}
+
+.join-meetup__inner-info-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+@media (max-width: 426px) {
+  .join-meetup__inner-info-title {
+    font-size: 1.2rem;
+  }
+}
+
+.join-meetup__inner-info-description {
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 426px) {
+  .join-meetup__inner-info-description {
+    font-size: 0.8rem;
+  }
+}
+
+.join-meetup__inner-info-link {
+  background-color: #E32359;
+  color: #fff;
+  padding: 0.5rem 4rem;
+  border-radius: 0.5rem;
+}
+@media (max-width: 862px) {
+  .join-meetup__inner-info-link {
+    margin: 0 auto;
+  }
+}
+
+.mobile-join-meetup__inner-img {
+  display: none;
+}
+@media (max-width: 862px) {
+  .mobile-join-meetup__inner-img {
+    display: inline-flex;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 862px) {
+  .descktop-join-meetup__inner-img {
+    display: none;
+  }
+}
+
+@media (max-width: 862px) {
+  .join-meetup__inner-img img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 862px) {
+  .meetup-img__wrapper {
+    display: flex;
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 862px) {
+  .join-meetup__btn {
+    display: flex;
+    justify-self: center;
   }
 }/*# sourceMappingURL=style.css.map */
