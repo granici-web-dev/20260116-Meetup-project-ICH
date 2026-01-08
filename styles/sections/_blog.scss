@@ -1,0 +1,80 @@
+@use '../variables/colors';
+
+.blog {
+  padding: 4rem 0;
+
+  @media (max-width: 1224px) {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.blog-title {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+
+  @media (max-width: 442px) {
+    font-size: 1.2rem;
+  }
+}
+
+.blog-description {
+  max-width: 53rem;
+  color: colors.$grey-color;
+}
+
+.blog-inner {
+  margin-top: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+
+  @media (max-width: 1224px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+.blog-item {
+  max-width: 23.5rem;
+}
+
+.blog-item__info-title {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+
+  @media (max-width: 442px) {
+    font-size: 1rem;
+  }
+}
+
+.blog-item__info-description {
+  margin: 0.8rem 0 1rem 0;
+  color: colors.$grey-color;
+
+  @media (max-width: 442px) {
+    font-size: 0.8rem;
+  }
+}
+
+.blog-item__info-link {
+  color: colors.$secondary-color;
+  transition: all 0.3s ease;
+
+  @media (max-width: 442px) {
+    font-size: 0.8rem;
+  }
+}
+
+.blog-item__info-link:hover{
+  color: colors.$primary-color;
+}
+
+.blog-item__cover {
+
+img {
+     @media (max-width: 862px) {
+      width: 100%;
+    }  
+  }
+}
+

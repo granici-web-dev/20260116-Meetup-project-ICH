@@ -21,6 +21,10 @@
   }
 }
 
+.cities-description {
+  color: colors.$grey-color;
+}
+
 .cities__inner {
   display: flex;
   justify-content: space-between;

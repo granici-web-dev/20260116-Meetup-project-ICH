@@ -1,7 +1,7 @@
 @use '../variables/colors';
 
 .how-it-works {
-  padding: 4rem 0;
+  padding-top: 4rem;
 
   @media (max-width: 1224px) {
     padding: 4rem 1.5rem;
@@ -11,6 +11,7 @@
 .how-it-works__title {
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
+  margin-top: 1rem;
 
   @media (max-width: 442px) {
     font-size: 1.2rem;
@@ -35,6 +36,7 @@
   background-color: colors.$secondary-color-light;
   border-radius: 0.5rem;
   width: 100%;
+  margin-top: 1.5rem;
 
   @media (max-width: 442px) {
     padding: 1rem;
