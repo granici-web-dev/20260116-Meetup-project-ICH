@@ -1,0 +1,69 @@
+@use '../variables/colors';
+
+.cities {
+
+  @media (max-width: 1224px) {
+    padding: 0 1.5rem;
+    margin-top: 4rem;
+  }
+}
+
+.cities-header {
+  margin-bottom: 2rem;
+}
+
+.cities-title {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+
+  @media (max-width: 442px) {
+    font-size: 1.2rem;
+  }
+}
+
+.cities__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  @media (max-width: 1124px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 694px) {
+    justify-content: center;
+  }
+}
+
+.cities-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cities-item__img {
+
+  img {
+    @media (max-width: 472px) {
+    width: 153px;
+  }
+  }
+}
+
+.cities-item__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: colors.$font-color;
+
+  @media (max-width: 472px) {
+    font-size: 1rem;
+  }
+}
+
+.cities-item__title:hover {
+  color: colors.$primary-color;
+}
+

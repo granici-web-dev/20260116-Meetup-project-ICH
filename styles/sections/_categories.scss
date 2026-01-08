@@ -37,10 +37,7 @@
   text-align: center;
   background-color: colors.$secondary-color-light;
   border-radius: 0.5rem;
-
-  @media (max-width: 1224px) {
-    width: 135px;
-  }
+  width: 135px;
 }
 
 .categories__inner-item-img {

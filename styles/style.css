@@ -317,10 +317,6 @@ a {
   }
 }
 
-.city-search__link:hover {
-  color: #F65858;
-}
-
 .see-events__link {
   color: #00798A;
   font-weight: 500;
@@ -470,6 +466,7 @@ a {
 @media (max-width: 1224px) {
   .join-meetup {
     padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -604,13 +601,76 @@ a {
   text-align: center;
   background-color: #F3F9F9;
   border-radius: 0.5rem;
-}
-@media (max-width: 1224px) {
-  .categories__inner-item {
-    width: 135px;
-  }
+  width: 135px;
 }
 
 .categories__inner-item-img {
   margin-bottom: 0.3rem;
+}
+
+@media (max-width: 1224px) {
+  .cities {
+    padding: 0 1.5rem;
+    margin-top: 4rem;
+  }
+}
+
+.cities-header {
+  margin-bottom: 2rem;
+}
+
+.cities-title {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 442px) {
+  .cities-title {
+    font-size: 1.2rem;
+  }
+}
+
+.cities__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+@media (max-width: 1124px) {
+  .cities__inner {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 694px) {
+  .cities__inner {
+    justify-content: center;
+  }
+}
+
+.cities-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 472px) {
+  .cities-item__img img {
+    width: 153px;
+  }
+}
+
+.cities-item__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212121;
+}
+@media (max-width: 472px) {
+  .cities-item__title {
+    font-size: 1rem;
+  }
+}
+
+.cities-item__title:hover {
+  color: #F65858;
 }/*# sourceMappingURL=style.css.map */
