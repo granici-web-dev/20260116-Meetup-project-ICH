@@ -23,6 +23,10 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
 .container {
   max-width: 74.75rem;
   width: 100%;
@@ -852,4 +856,144 @@ a {
   .blog-item__cover img {
     width: 100%;
   }
+}
+
+.footer {
+  background-color: #212121;
+  color: #F6F7F8;
+  padding: 1.5rem 0;
+}
+@media (max-width: 1224px) {
+  .footer {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.footer__top {
+  display: flex;
+  gap: 3.3rem;
+  align-items: center;
+  border-bottom: 1px solid #707070;
+  padding-bottom: 2rem;
+}
+@media (max-width: 436px) {
+  .footer__top {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 436px) {
+  .footer__top-text {
+    font-size: 0.8rem;
+  }
+}
+
+.footer__links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__top-button {
+  padding: 0.65rem 0.9rem;
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
+  color: #fff;
+}
+@media (max-width: 436px) {
+  .footer__top-button {
+    font-size: 0.8rem;
+  }
+}
+
+.footer__links-item-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.footer__links-item {
+  max-width: 23.25rem;
+  width: 100%;
+}
+.footer__links-item ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 496px) {
+  .footer__links {
+    gap: 0.5rem;
+  }
+}
+
+.footer-link {
+  color: #C5C4C4;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #fff;
+  margin-left: 0.2rem;
+}
+
+.footer__social-title {
+  margin-bottom: 0.8rem;
+}
+
+.footer__social-icons {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  align-items: flex-end;
+}
+
+.footer__social-apps {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.footer-bottom-links-wrapper {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 897px) {
+  .mobile__footer-bottom-links-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 652px) {
+  .mobile__footer__social-apps {
+    display: none;
+  }
+}
+
+.footer__bottom-link {
+  color: #C5C4C4;
+  transition: all 0.3s ease;
+}
+@media (max-width: 496px) {
+  .footer__bottom-link {
+    font-size: 0.8rem;
+  }
+}
+
+.footer__bottom-link:hover {
+  color: #fff;
+  margin-left: 0.2rem;
 }/*# sourceMappingURL=style.css.map */

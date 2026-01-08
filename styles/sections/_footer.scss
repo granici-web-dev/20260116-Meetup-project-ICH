@@ -1,0 +1,141 @@
+@use '../variables/colors';
+
+.footer {
+  background-color: colors.$font-color;
+  color: colors.$white-color-dark;
+  padding: 1.5rem 0;
+
+  @media (max-width: 1224px) {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.footer__top {
+  display: flex;
+  gap: 3.3rem;
+  align-items: center;
+  border-bottom: 1px solid colors.$grey-color;
+  padding-bottom: 2rem;
+
+  @media (max-width: 436px) {
+    gap: 1rem;
+  }
+}
+
+.footer__top-text {
+  @media (max-width: 436px) {
+    font-size: 0.8rem;
+  }
+}
+
+.footer__links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__top-button {
+  padding: 0.65rem 0.9rem;
+  border: 2px solid colors.$white-color;
+  border-radius: 0.5rem;
+  color: colors.$white-color;
+
+  @media (max-width: 436px) {
+    font-size: 0.8rem;
+  }
+}
+
+.footer__links-item-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.footer__links-item {
+  max-width: 23.25rem;
+  width: 100%;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.footer__links {
+  @media (max-width: 496px) {
+    gap: 0.5rem;
+  }
+}
+
+.footer-link {
+  color: colors.$grey-color-light;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: colors.$white-color;
+  margin-left: 0.2rem;
+}
+
+.footer__social-title {
+  margin-bottom: 0.8rem;
+}
+
+.footer__social-icons {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  align-items: flex-end;
+}
+
+.footer__social-apps {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.footer-bottom-links-wrapper {
+  display: flex;
+  gap: 1.5rem;
+
+}
+
+.mobile__footer-bottom-links-wrapper {
+
+  @media (max-width: 897px) {
+    display: none;
+  }
+}
+
+.mobile__footer__social-apps {
+
+  @media (max-width: 652px) {
+    display: none;
+  }
+}
+
+.footer__bottom-link {
+  color: colors.$grey-color-light;
+  transition: all 0.3s ease;
+
+  @media (max-width: 496px) {
+    font-size: 0.8rem;
+  }
+}
+
+.footer__bottom-link:hover {
+  color: colors.$white-color;
+  margin-left: 0.2rem;
+}
