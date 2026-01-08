@@ -256,6 +256,12 @@ a {
 .events {
   padding: 3rem 0;
 }
+@media (max-width: 426px) {
+  .events {
+    padding: 1rem 0;
+    padding-bottom: 0;
+  }
+}
 
 @media (max-width: 1224px) {
   .event-card__wrapper,
@@ -279,7 +285,7 @@ a {
 .events-inner-header__left-title {
   font-size: 1.75rem;
 }
-@media (max-width: 426px) {
+@media (max-width: 442px) {
   .events-inner-header__left-title {
     font-size: 1.2rem;
   }
@@ -287,7 +293,7 @@ a {
 
 .search_link {
   display: flex;
-  align-items: start;
+  align-items: center;
   gap: 0.5rem;
   padding: 1rem;
   background-color: #F3F9F9;
@@ -303,16 +309,26 @@ a {
   color: #00798A;
   font-weight: 600;
   font-size: 1.25rem;
+  transition: all 0.3s ease;
 }
-@media (max-width: 426px) {
+@media (max-width: 442px) {
   .city-search__link {
     font-size: 0.8rem;
   }
 }
 
+.city-search__link:hover {
+  color: #F65858;
+}
+
 .see-events__link {
   color: #00798A;
   font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.see-events__link:hover {
+  color: #F65858;
 }
 
 .event-card__wrapper {
@@ -499,11 +515,16 @@ a {
   color: #fff;
   padding: 0.5rem 4rem;
   border-radius: 0.5rem;
+  transition: all 0.3s ease;
 }
 @media (max-width: 862px) {
   .join-meetup__inner-info-link {
     margin: 0 auto;
   }
+}
+
+.join-meetup__inner-info-link:hover {
+  background-color: #bf1243;
 }
 
 .mobile-join-meetup__inner-img {
@@ -540,4 +561,56 @@ a {
     display: flex;
     justify-self: center;
   }
+}
+
+.categories {
+  padding: 4rem 0;
+}
+@media (max-width: 1224px) {
+  .categories {
+    padding: 0 1.5rem;
+  }
+}
+
+.categories-title {
+  font-size: 1.75rem;
+}
+@media (max-width: 442px) {
+  .categories-title {
+    font-size: 1.2rem;
+  }
+}
+
+.categories__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 1224px) {
+  .categories__inner {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 786px) {
+  .categories__inner {
+    justify-content: center;
+  }
+}
+
+.categories__inner-item {
+  padding: 1.2rem 1.8rem;
+  text-align: center;
+  background-color: #F3F9F9;
+  border-radius: 0.5rem;
+}
+@media (max-width: 1224px) {
+  .categories__inner-item {
+    width: 135px;
+  }
+}
+
+.categories__inner-item-img {
+  margin-bottom: 0.3rem;
 }/*# sourceMappingURL=style.css.map */

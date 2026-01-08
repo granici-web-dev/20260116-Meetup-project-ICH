@@ -1,0 +1,49 @@
+@use '../variables/colors';
+
+.categories {
+  padding: 4rem 0;
+
+  @media (max-width: 1224px) {
+    padding: 0 1.5rem;
+  }
+}
+
+.categories-title {
+  font-size: 1.75rem;
+
+   @media (max-width: 442px) {
+    font-size: 1.2rem;
+  }
+}
+
+.categories__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  @media (max-width: 1224px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 786px) {
+    justify-content: center;
+  }
+}
+
+.categories__inner-item {
+  padding: 1.2rem 1.8rem;
+  text-align: center;
+  background-color: colors.$secondary-color-light;
+  border-radius: 0.5rem;
+
+  @media (max-width: 1224px) {
+    width: 135px;
+  }
+}
+
+.categories__inner-item-img {
+  margin-bottom: 0.3rem;
+}
+

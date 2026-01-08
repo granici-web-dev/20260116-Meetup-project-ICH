@@ -2,6 +2,11 @@
 
 .events {
   padding: 3rem 0;
+
+  @media (max-width: 426px) {
+    padding: 1rem 0;
+    padding-bottom: 0;
+  }
 }
 
 .event-card__wrapper,
@@ -27,19 +32,19 @@
 .events-inner-header__left-title {
   font-size: 1.75rem;
 
-  @media (max-width: 426px) {
+  @media (max-width: 442px) {
     font-size: 1.2rem;
   }
 }
 
 .search_link {
   display: flex;
-  align-items: start;
+  align-items: center;
   gap: 0.5rem;
   padding: 1rem;
   background-color: colors.$secondary-color-light;
   border-radius: 0.5rem;
-
+  
   @media (max-width: 426px) {
     padding: 0.5rem;
   }
@@ -49,15 +54,25 @@
   color: colors.$secondary-color;
   font-weight: 600;
   font-size: 1.25rem;
+  transition: all 0.3s ease;
 
-  @media (max-width: 426px) {
+  @media (max-width: 442px) {
     font-size: 0.8rem;
   }
+}
+
+.city-search__link:hover {
+  color: colors.$primary-color;
 }
 
 .see-events__link {
   color: colors.$secondary-color;
   font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.see-events__link:hover {
+  color: colors.$primary-color;
 }
 
 .event-card__wrapper {
