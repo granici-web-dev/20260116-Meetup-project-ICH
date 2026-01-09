@@ -1,11 +1,28 @@
 @use '../variables/colors';
 
+.events-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
 .filter {
   padding: 4rem 0;
 
   @media (max-width: 1224px) {
     padding: 1rem 1.5rem;
   }
+}
+
+.filter-selects {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+
+}
+
+.filters-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
 .filter-title {
@@ -32,6 +49,7 @@
   position: relative;
   display: inline-flex;
   margin-top: 0.75rem;
+  flex-shrink: 0;
 }
 
 .select-wrapper::after {

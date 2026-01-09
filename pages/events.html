@@ -14,6 +14,7 @@
   </head>
   <body>
     <div class="app">
+      <!-- NAV MENU SECTION -->
       <nav class="nav-menu">
         <div class="nav-menu__inner">
           <div class="nav-menu-inner__left">
@@ -67,83 +68,251 @@
         </div>
       </nav>
 
+      <!-- FILTER SECTION -->
       <div class="events-wrapper">
-        <section class="filter">
-          <div class="container">
-            <h2 class="filter-title">Events near New York, NY</h2>
-            <div class="filter-inner">
-              <div class="filter-tabs">
-                <a href="#" class="filter-tabs__events">Events</a>
-              </div>
-              <div class="filter-selects">
+        <div class="container">
+          <div class="events-inner">
+            <section class="filter">
+              <h2 class="filter-title">Events near New York, NY</h2>
+              <div class="filter-inner">
+                <div class="filter-tabs">
+                  <a href="#" class="filter-tabs__events">Events</a>
+                </div>
+                <div class="filters-scroll hidden">
+                  <div class="filter-selects">
+                    <div class="select-wrapper">
+                      <select name="date" id="date-select" class="cus-select">
+                        <option value="">Any date</option>
+                        <option value="2024-05-20">20 May</option>
+                        <option value="2024-04-25">25 April</option>
+                      </select>
+                    </div>
 
-                <div class="select-wrapper">
-                    <select name="type" id="cus-select" class="cus-select">
-                      <option value="">Any date</option>
-                      <option value="offline">20 May</option>
-                      <option value="online">25 April</option>
-                    </select>
-                  </div>
-                  <div class="select-wrapper">
-                    <select name="type" id="type-select" class="cus-select">
-                      <option value="">Any type</option>
-                      <option value="offline">Offline</option>
-                      <option value="online">Online</option>
-                    </select>
-                  </div>
-                  <div class="select-wrapper">
-                    <select name="type" id="distance-select" class="cus-select">
-                      <option value="">Any distance</option>
-                      <option value="25">25</option>
-                      <option value="50">50</option>
-                      <option value="75">75</option>
-                      <option value="100">100</option>
-                    </select>
-                  </div>
-                  <div class="select-wrapper">
-                    <select name="type" id="category-select" class="cus-select">
-                      <option value="">Any category</option>
-                      <option value="health">Health and Wellbeing</option>
-                      <option value="social">Social Activities</option>
-                      <option value="business">Business</option>
-                      <option value="technology">Technology</option>
-                    </select>
-                  </div>
+                    <div class="select-wrapper">
+                      <select name="type" id="type-select" class="cus-select">
+                        <option value="">Any type</option>
+                        <option value="offline">Offline</option>
+                        <option value="online">Online</option>
+                      </select>
+                    </div>
 
-              </div>
+                    <div class="select-wrapper">
+                      <select name="distance" id="distance-select" class="cus-select">
+                        <option value="">Any distance</option>
+                        <option value="25">25 km</option>
+                        <option value="50">50 km</option>
+                        <option value="75">75 km</option>
+                        <option value="100">100 km</option>
+                      </select>
+                    </div>
 
-              <div class="filter-events">
+                    <div class="select-wrapper">
+                      <select name="category" id="category-select" class="cus-select">
+                        <option value="">Any category</option>
+                        <option value="Health and Wellbeing">Health and Wellbeing</option>
+                        <option value="Social Activities">Social Activities</option>
+                        <option value="Business">Business</option>
+                        <option value="Technology">Technology</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
 
+                <!-- FILTER SELECT -->
+                <div class="filter-events">
                   <div class="filter-events__item">
                     <div class="filter-events__item-cover">
-                      <img src="/images/event_cover.jpg" alt="">
+                      <img src="/images/event_cover.jpg" alt="" />
                     </div>
                     <div class="filter-events__item-info">
-                      <div class="filter-events__item-info__date">
-                        Wed, Mar 13 · 11:30 PM UTC
-                      </div>
+                      <div class="filter-events__item-info__date">Wed, Mar 13 · 11:30 PM UTC</div>
                       <div class="filter-events__item-info__title">
                         All Nations - Manhattan Missions Church Bible Study
                       </div>
                       <div class="filter-events__item-info__categories">
-                        Hobbies and Passions <span class="filter-events__item-info__categories-distance">(5 km)</span>
+                        Hobbies and Passions
+                        <span class="filter-events__item-info__categories-distance">(5 km)</span>
                       </div>
                       <div class="filter-events__item-info__bottom">
-                        <div class="filter-events__item-info__bottom__attendees">
-                          99 attendees
-                        </div>
-                        <div class="filter-events__item-info__bottom__left">
-                          2 spots left
-                        </div>
+                        <div class="filter-events__item-info__bottom__attendees">99 attendees</div>
+                        <div class="filter-events__item-info__bottom__devider">·</div>
+                        <div class="filter-events__item-info__bottom__left">2 spots left</div>
                       </div>
                     </div>
                   </div>
 
+                  <div class="filter-events__item">
+                    <div class="filter-events__item-cover">
+                      <img src="/images/event_cover.jpg" alt="" />
+                    </div>
+                    <div class="filter-events__item-info">
+                      <div class="filter-events__item-info__date">Wed, Mar 13 · 11:30 PM UTC</div>
+                      <div class="filter-events__item-info__title">
+                        All Nations - Manhattan Missions Church Bible Study
+                      </div>
+                      <div class="filter-events__item-info__categories">
+                        Hobbies and Passions
+                        <span class="filter-events__item-info__categories-distance">(5 km)</span>
+                      </div>
+                      <div class="filter-events__item-info__bottom">
+                        <div class="filter-events__item-info__bottom__attendees">99 attendees</div>
+                        <div class="filter-events__item-info__bottom__devider">·</div>
+                        <div class="filter-events__item-info__bottom__left">2 spots left</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter-events__item">
+                    <div class="filter-events__item-cover">
+                      <img src="/images/event_cover.jpg" alt="" />
+                    </div>
+                    <div class="filter-events__item-info">
+                      <div class="filter-events__item-info__date">Wed, Mar 13 · 11:30 PM UTC</div>
+                      <div class="filter-events__item-info__title">
+                        All Nations - Manhattan Missions Church Bible Study
+                      </div>
+                      <div class="filter-events__item-info__categories">
+                        Hobbies and Passions
+                        <span class="filter-events__item-info__categories-distance">(5 km)</span>
+                      </div>
+                      <div class="filter-events__item-info__bottom">
+                        <div class="filter-events__item-info__bottom__attendees">99 attendees</div>
+                        <div class="filter-events__item-info__bottom__devider">·</div>
+                        <div class="filter-events__item-info__bottom__left">2 spots left</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter-events__item">
+                    <div class="filter-events__item-cover">
+                      <img src="/images/event_cover.jpg" alt="" />
+                    </div>
+                    <div class="filter-events__item-info">
+                      <div class="filter-events__item-info__date">Wed, Mar 13 · 11:30 PM UTC</div>
+                      <div class="filter-events__item-info__title">
+                        All Nations - Manhattan Missions Church Bible Study
+                      </div>
+                      <div class="filter-events__item-info__categories">
+                        Hobbies and Passions
+                        <span class="filter-events__item-info__categories-distance">(5 km)</span>
+                      </div>
+                      <div class="filter-events__item-info__bottom">
+                        <div class="filter-events__item-info__bottom__attendees">99 attendees</div>
+                        <div class="filter-events__item-info__bottom__devider">·</div>
+                        <div class="filter-events__item-info__bottom__left">2 spots left</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- MAP SECTION -->
+            <section class="map mobile-map">
+              <div class="map-header">
+                <p class="map-header__subtitle">Find events near</p>
+                <h2 class="map-header__title">New York, NY</h2>
+              </div>
+
+              <div class="map-img">
+                <div class="map-img__close-icon">
+                  <img src="/images/icons/close-icon.svg" alt="" />
+                </div>
+                <div class="map-button__wrapper">
+                  <a href="#" class="map-img__browse-btn">
+                    Browse in map
+                    <span class="browse-btn__icon"></span>
+                  </a>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER SECTION -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-inner">
+            <div class="footer__top">
+              <p class="footer__top-text">Create your own Meetup group.</p>
+              <a href="#" class="footer__top-button">Get Started</a>
+            </div>
+            <div class="footer__links">
+              <div class="footer__links-item">
+                <h4 class="footer__links-item-title">Your Account</h4>
+                <ul>
+                  <li><a class="footer-link" href="#">Sign up</a></li>
+                  <li><a class="footer-link" href="#">Log in</a></li>
+                  <li><a class="footer-link" href="#">Help</a></li>
+                  <li><a class="footer-link" href="#">Become an Affiliate</a></li>
+                </ul>
+              </div>
+
+              <div class="footer__links-item">
+                <h4 class="footer__links-item-title">Discover</h4>
+                <ul>
+                  <li><a class="footer-link" href="#">Groups</a></li>
+                  <li><a class="footer-link" href="#">Calendar</a></li>
+                  <li><a class="footer-link" href="#">Topics</a></li>
+                  <li><a class="footer-link" href="#">Cities</a></li>
+                  <li><a class="footer-link" href="#">Online Events</a></li>
+                  <li><a class="footer-link" href="#">Local Guides</a></li>
+                  <li><a class="footer-link" href="#">Make Friends</a></li>
+                </ul>
+              </div>
+
+              <div class="footer__links-item">
+                <h4 class="footer__links-item-title">Meetup</h4>
+                <ul>
+                  <li><a class="footer-link" href="#">About</a></li>
+                  <li><a class="footer-link" href="#">Blog</a></li>
+                  <li><a class="footer-link" href="#">Meetup Pro</a></li>
+                  <li><a class="footer-link" href="#">Careers</a></li>
+                  <li><a class="footer-link" href="#">Apps</a></li>
+                  <li><a class="footer-link" href="#">Podcast</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__social">
+              <div class="footer__social-wrapper">
+                <h4 class="footer__social-title">Follow us</h4>
+                <div class="footer__social-icons">
+                  <a href="www.facebook.com" target="_blank"
+                    ><img src="/images/socials/facebook.svg" alt="Facebook logo"
+                  /></a>
+                  <a href="www.x.com" target="_blank"
+                    ><img src="/images/socials/twitter.svg" alt="Twitter logo"
+                  /></a>
+                  <a href="www.youtube.com" target="_blank"
+                    ><img src="/images/socials/youtube.svg" alt="YouTube logo"
+                  /></a>
+                  <a href="www.instagram.com" target="_blank"
+                    ><img src="/images/socials/instagram.svg" alt="Instagram logo"
+                  /></a>
+                  <a href="www.tiktok.com" target="_blank"
+                    ><img src="/images/socials/tiktok.svg" alt="TikTok logo"
+                  /></a>
+                </div>
+              </div>
+              <div class="footer__social-apps mobile__footer__social-apps">
+                <a href="#" target="_blank"><img src="/images/socials/google.svg" alt="" /></a>
+                <a href="#" target="_blank"><img src="/images/socials/apple.svg" alt="" /></a>
+              </div>
+            </div>
+            <div class="footer__bottom">
+              <p class="footer__bottom-copyright">© 2024 Meetup</p>
+              <div class="footer-bottom-links-wrapper mobile__footer-bottom-links-wrapper">
+                <a href="#" class="footer__bottom-link">Terms of Service</a>
+                <a href="#" class="footer__bottom-link">Privacy Policy</a>
+                <a href="#" class="footer__bottom-link">Do Not Sell or Share My Personal Data</a>
+                <a href="#" class="footer__bottom-link">Cookie Policy</a>
+                <a href="#" class="footer__bottom-link">Help</a>
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </footer>
     </div>
   </body>
   <script src="/scripts/script.js"></script>
