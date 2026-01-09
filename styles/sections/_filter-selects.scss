@@ -1,0 +1,68 @@
+@use '../variables/colors';
+
+.filter {
+  padding: 4rem 0;
+
+  @media (max-width: 1224px) {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.filter-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+
+  @media (max-width: 442px) {
+    font-size: 1.5rem;
+  }
+}
+
+.filter-tabs__events {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: colors.$secondary-color;
+  border-bottom: 4px solid colors.$secondary-color;
+}
+
+.filter-tabs {
+  margin-bottom: 0.75rem;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-flex;
+  margin-top: 0.75rem;
+}
+
+.select-wrapper::after {
+  content: '';
+  position: absolute;
+  background-image: url(/images/icons/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 0.6rem;
+  height: 0.6rem;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.cus-select {
+  appearance: none;
+  padding: 1rem 3rem 1rem 1.25rem;
+  background-color: colors.$white-color-dark;
+  border-radius: 2.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filter-selects {
+  display: flex;
+  gap: 1rem;
+}
+
+
+
