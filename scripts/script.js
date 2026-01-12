@@ -96,3 +96,77 @@ const filters = [
     ],
   },
 ];
+
+const eventContainer = document.querySelector('.event-card__wrapper');
+
+const createElement = (event) => {
+  const formattedDate = formatEventDate(event.date);
+  const eventCard = document.createElement('div');
+  eventCard.classList.add('event-card');
+
+  eventCard.innerHTML = `
+    <div class="event-card__cover">
+                    <a href="#">
+                      <img src="${event.image}" class="event-card__cover__img" />
+                    </a>
+                  </div>
+                  <div class="event-card__info">
+                    <div class="event-card__info-wrapper">
+                      <a href="#" class="event-card__info__title">
+                        ${event.title}
+                      </a>
+                    </div>
+                    <div class="event-card__info__category">${event.category} (${
+    event.distance
+  } km)</div>
+                    <div class="event-card__info__description">
+                      <div class="event-card-info-description__date">
+                        <img
+                          src="/images/icons/date.svg"
+                          alt="Date icon"
+                          class="event-card-info-description__date__img"
+                        />
+                        <span>${formattedDate}</span>
+                      </div>
+                      <div class="event-card-info-description__bottom">
+                        <div class="event-card-info-description__guests">
+                          <img src="/images/icons/check.svg" alt="" />
+                          <span>${event.attendees !== undefined ? event.attendees : 0}</span>
+                        </div>
+                        <div class="event-card-info-description__price">
+                          <img src="/images/icons/ticket.svg" alt="" />
+                          <span>Free</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  `;
+
+  return eventCard;
+}
+
+const renderEventCard = () => {
+  eventsStore.forEach((event) => {
+    const eventChild = createElement(event);
+    eventContainer.appendChild(eventChild);
+  })
+}
+
+renderEventCard();
+
+function formatEventDate(date) {
+  const options = {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  };
+
+  return new Intl.DateTimeFormat('en-US', options)
+    .format(date)
+    .toUpperCase()
+    .replace(',', '')
+    .replace(' AT', ' ·');
+}

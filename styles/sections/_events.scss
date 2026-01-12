@@ -108,12 +108,39 @@
   }
 }
 
+.event-card__cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.5rem;
+
+  @media (max-width: 611px) {
+    width: 160px;
+    aspect-ratio: 16 / 9;
+    flex-shrink: 0;
+  }
+}
+
 .event-card__cover__img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  will-change: transform;
 
   @media (max-width: 611px) {
     width: 160px;
   }
   
+}
+
+.event-card__cover a:hover .event-card__cover__img {
+  transform: scale(1.12);
 }
 
 .event-card__info {
@@ -124,10 +151,15 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: colors.$font-color;
+  transition: all 0.3s ease;
 
   @media (max-width: 611px) {
     font-size: 0.6rem;
   }
+}
+
+.event-card__info__title:hover {
+  color: colors.$primary-color;
 }
 
 .event-card__info__category {
