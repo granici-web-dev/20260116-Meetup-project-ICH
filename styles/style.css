@@ -112,7 +112,7 @@ li {
 }
 
 .search-button:hover {
-  background-color: #f43f3f;
+  background-color: #bf1243;
 }
 
 .nav-menu-inner__right {
@@ -899,11 +899,17 @@ li {
   border: 2px solid #fff;
   border-radius: 0.5rem;
   color: #fff;
+  transition: all 0.3s ease;
 }
 @media (max-width: 436px) {
   .footer__top-button {
     font-size: 0.8rem;
   }
+}
+
+.footer__top-button:hover {
+  background-color: #fff;
+  color: #212121;
 }
 
 .footer__links-item-title {
@@ -1002,9 +1008,15 @@ li {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1226px) {
+  .events-inner {
+    justify-content: flex-start;
+  }
+}
 
 .filter {
   padding: 4rem 0;
+  min-width: 0;
 }
 @media (max-width: 1224px) {
   .filter {
@@ -1022,6 +1034,7 @@ li {
 .filters-scroll {
   overflow-x: auto;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .filter-title {
@@ -1065,17 +1078,21 @@ li {
   transform: translateY(-50%);
   cursor: pointer;
 }
-
 .cus-select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  padding: 1rem 3rem 1rem 1.25rem;
+  padding: 1rem 2.6rem 1rem 1rem;
   background-color: #F6F7F8;
   border-radius: 2.5rem;
   border: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
+  inline-size: -moz-max-content;
+  inline-size: max-content;
+  min-inline-size: -moz-fit-content;
+  min-inline-size: fit-content;
+  white-space: nowrap;
   cursor: pointer;
 }
 

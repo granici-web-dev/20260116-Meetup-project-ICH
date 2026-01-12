@@ -3,10 +3,15 @@
 .events-inner {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1226px) {
+    justify-content: flex-start;
+  }
 }
 
 .filter {
   padding: 4rem 0;
+  min-width: 0;
 
   @media (max-width: 1224px) {
     padding: 1rem 1.5rem;
@@ -23,6 +28,7 @@
 .filters-scroll {
   overflow-x: auto;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .filter-title {
@@ -64,16 +70,23 @@
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+
+  @media (max-width: 442px) {
+    
+  }
 }
 
 .cus-select {
   appearance: none;
-  padding: 1rem 3rem 1rem 1.25rem;
+  padding: 1rem 2.6rem 1rem 1rem;
   background-color: colors.$white-color-dark;
   border-radius: 2.5rem;
   border: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
+  inline-size: max-content;
+  min-inline-size: fit-content;
+  white-space: nowrap;
   cursor: pointer;
 }
 
