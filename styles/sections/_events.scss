@@ -9,7 +9,8 @@
   }
 }
 
-.event-card__wrapper,
+.event-card__wrapper-near,
+.event-card__wrapper-upcomming,
 .events-inner__header {
 
   @media (max-width: 1224px) {
@@ -71,7 +72,8 @@
   color: colors.$primary-color;
 }
 
-.event-card__wrapper {
+.event-card__wrapper-near,
+ .event-card__wrapper-upcomming{
   display: flex;
   justify-content: flex-start;
   gap: 2.25rem;
@@ -110,6 +112,7 @@
 
 .event-card__cover {
   width: 100%;
+  max-width: 17rem;
   aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
@@ -234,4 +237,11 @@
   @media (max-width: 611px) {
     display: none;
   }
+}
+
+.not-found-events-title {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: colors.$grey-color;
+  font-weight: 500;
 }

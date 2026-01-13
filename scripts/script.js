@@ -97,76 +97,152 @@ const filters = [
   },
 ];
 
-const eventContainer = document.querySelector('.event-card__wrapper');
-
-const createElement = (event) => {
-  const formattedDate = formatEventDate(event.date);
-  const eventCard = document.createElement('div');
-  eventCard.classList.add('event-card');
-
-  eventCard.innerHTML = `
-    <div class="event-card__cover">
-                    <a href="#">
-                      <img src="${event.image}" class="event-card__cover__img" />
-                    </a>
-                  </div>
-                  <div class="event-card__info">
-                    <div class="event-card__info-wrapper">
-                      <a href="#" class="event-card__info__title">
-                        ${event.title}
-                      </a>
-                    </div>
-                    <div class="event-card__info__category">${event.category} (${
-    event.distance
-  } km)</div>
-                    <div class="event-card__info__description">
-                      <div class="event-card-info-description__date">
-                        <img
-                          src="/images/icons/date.svg"
-                          alt="Date icon"
-                          class="event-card-info-description__date__img"
-                        />
-                        <span>${formattedDate}</span>
-                      </div>
-                      <div class="event-card-info-description__bottom">
-                        <div class="event-card-info-description__guests">
-                          <img src="/images/icons/check.svg" alt="" />
-                          <span>${event.attendees !== undefined ? event.attendees : 0}</span>
-                        </div>
-                        <div class="event-card-info-description__price">
-                          <img src="/images/icons/ticket.svg" alt="" />
-                          <span>Free</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-  `;
-
-  return eventCard;
-}
-
-const renderEventCard = () => {
-  eventsStore.forEach((event) => {
-    const eventChild = createElement(event);
-    eventContainer.appendChild(eventChild);
-  })
-}
-
-renderEventCard();
-
-function formatEventDate(date) {
+// Создаю функцию, которая будет показывать дату в выпадающем списке только месяц и день
+const customDate = (date) => {
+  // Указываем, что нужен только месяц и день
   const options = {
-    weekday: 'short',
     month: 'short',
     day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: true,
   };
+  // функция возвращает строку вроде Mar 23
+  return date.toLocaleDateString('en-US', options);
+};
 
-  return new Intl.DateTimeFormat('en-US', options)
-    .format(date)
-    .toUpperCase()
-    .replace(',', '')
-    .replace(' AT', ' ·');
-}
+// Функция, котрая убирает дубликаты дней. Нам важен только день, без времени
+const getUniqueDays = (dates) => {
+  // Создаем пустой массив для уникальных дат
+  const uniqueDates = [];
+  // Создаем пустой массив для повторяющихся дат
+  const seenDays = [];
+
+  // Проходимся по массиву дат
+  dates.forEach((date) => {
+    // Переводим формат даты в YYYY-MM-DD
+    const dateString = date.toISOString().split('T')[0];
+
+    // Првоеряем, встречалась ли такая строка раньше
+    if (!seenDays.includes(dateString)) {
+      // Добавляем строку в массив уже увиденных дат
+      seenDays.push(dateString);
+      // Добавляем саму дату в массив уникальных дат
+      uniqueDates.push(date);
+    }
+  });
+  // Возвращаем массив уникальных дат
+  return uniqueDates;
+};
+
+const createFilterOptions = () => {
+  // Фильтр по дате
+  const dateSelect = document.querySelector('#date-select');
+  // Проверяем, существует ли он на странице
+  if (dateSelect) {
+    const dayFilter = filters.find((f) => {
+      // Из массива фильтров находим объект с типом day
+      return f.type === 'day';
+    });
+
+    if (dayFilter) {
+      // Убираем из массива значение Any date
+      const allDates = dayFilter.options.filter((opt) => {
+        return opt !== 'Any date';
+      });
+      // Получаем массив уникальных дат
+      const uniqueDates = getUniqueDays(allDates);
+
+      dateSelect.innerHTML = `<option value="Any date">Any date</option>`;
+      // Проходимся по массиву уникальных дат
+      uniqueDates.forEach((date) => {
+        // Создаем option
+        const option = document.createElement('option');
+        // В value кладем дату без времени
+        option.value = date.toISOString().split('T')[0];
+        // В текст кладем отформатированную дату
+        option.textContent = customDate(date);
+        // Добавляем option в select
+        dateSelect.appendChild(option);
+      });
+    }
+  }
+
+  // Фильтр по типу
+  const typeSelect = document.querySelector('#type-select');
+  // Проверяю, существует ли он на странице
+  if (typeSelect) {
+    const typeFilter = filters.find((f) => {
+      // Из массива фильтров находим объект с типом type
+      return f.type === 'type';
+    });
+    // Проверяем, существует ли он на странице
+    if (typeFilter) {
+      // Очищаем select
+      typeSelect.innerHTML = '';
+      // Проходимся по массиву опций
+      typeFilter.options.forEach((opt) => {
+        // Создаем option
+        const option = document.createElement('option');
+        // В value кладем тип
+        option.value = opt;
+        // В текст кладем тип
+        option.textContent = opt;
+        // Добавляем option в select
+        typeSelect.appendChild(option);
+      });
+    }
+  }
+
+  // Фильтр по distance
+  const distanceSelect = document.querySelector('#distance-select');
+  // Проверяю, существует ли он на странице
+  if (distanceSelect) {
+    const distanceFilter = filters.find((f) => {
+      // Из массива фильтров находим объект с типом distance
+      return f.type === 'distance';
+    });
+    // Проверяем, существует ли он на странице
+    if (distanceFilter) {
+      // Очищаем select
+      distanceSelect.innerHTML = '';
+      // Проходимся по массиву опций
+      distanceFilter.options.forEach((opt) => {
+        // Создаем option
+        const option = document.createElement('option');
+        // В value кладем дистанцию
+        option.value = opt;
+        // В текст кладем дистанцию
+        option.textContent = opt;
+        // Добавляем option в select
+        distanceSelect.appendChild(option);
+      });
+    }
+  }
+
+  // Фильтр по category
+  const categorySelect = document.querySelector('#category-select');
+  // Проверяю, существует ли он на странице
+  if (categorySelect) {
+    const categoryFilter = filters.find((f) => {
+      // Из массива фильтров находим объект с типом category
+      return f.type === 'category';
+    });
+    // Проверяем, существует ли он на странице
+    if (categoryFilter) {
+      // Очищаем select
+      categorySelect.innerHTML = '';
+      // Проходимся по массиву опций
+      categoryFilter.options.forEach((opt) => {
+        // Создаем option
+        const option = document.createElement('option');
+        // В value кладем категорию
+        option.value = opt;
+        // В текст кладем категорию
+        option.textContent = opt;
+        // Добавляем option в select
+        categorySelect.appendChild(option);
+      });
+    }
+  }
+};
+
+
+

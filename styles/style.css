@@ -268,7 +268,8 @@ li {
 }
 
 @media (max-width: 1224px) {
-  .event-card__wrapper,
+  .event-card__wrapper-near,
+  .event-card__wrapper-upcomming,
   .events-inner__header {
     padding: 0 1.5rem;
   }
@@ -331,7 +332,8 @@ li {
   color: #F65858;
 }
 
-.event-card__wrapper {
+.event-card__wrapper-near,
+.event-card__wrapper-upcomming {
   display: flex;
   justify-content: flex-start;
   gap: 2.25rem;
@@ -339,7 +341,8 @@ li {
   margin-bottom: 3rem;
 }
 @media (max-width: 611px) {
-  .event-card__wrapper {
+  .event-card__wrapper-near,
+  .event-card__wrapper-upcomming {
     gap: 1rem;
   }
 }
@@ -373,6 +376,7 @@ li {
 
 .event-card__cover {
   width: 100%;
+  max-width: 17rem;
   aspect-ratio: 16/9;
   display: flex;
   align-items: center;
@@ -500,6 +504,13 @@ li {
   .mobile__see-events__link {
     display: none;
   }
+}
+
+.not-found-events-title {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #707070;
+  font-weight: 500;
 }
 
 @media (max-width: 1224px) {
@@ -1068,7 +1079,6 @@ li {
 
 .filters-scroll {
   overflow-x: auto;
-  scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
 
