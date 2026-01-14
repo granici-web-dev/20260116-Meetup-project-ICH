@@ -132,6 +132,133 @@ const getUniqueDays = (dates) => {
   return uniqueDates;
 };
 
+// Функция форматирования даты для карточки
+const formatEventDate = (date) => {
+  // Указываем формат, используя стандартный форматтер
+  const options = {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+  };
+
+  return (
+    date
+      // Преобразовываем в строку
+      .toLocaleDateString('en-US', options)
+      // Преобразовываем в верхний регистр
+      .toUpperCase()
+  );
+}
+
+// ------- EVENT CARDS ----------
+
+// Grid cards
+const createGridEventCard = (event) => {
+  const card = document.createElement('div');
+  card.classList.add('event-card');
+
+  card.innerHTML = `
+    <div class="event-card__cover">
+          <a href="#">
+            <img 
+              src="${event.image}" 
+              alt="${event.title}" 
+              class="event-card__cover__img"
+            />
+          </a>
+        </div>
+
+        <div class="event-card__info">
+          <div class="event-card__info-wrapper">
+            <a href="events.html" class="event-card__info__title">
+              ${event.title}
+            </a>
+          </div>
+
+          <div class="event-card__info__category">
+            ${event.category} (${event.distance} km)
+          </div>
+
+          <div class="event-card__info__description">
+            <div class="event-card-info-description__date">
+              <img src="/images/icons/date.svg" alt="Date icon" />
+              <span>${formatEventDate(event.date)}</span>
+            </div>
+
+            <div class="event-card-info-description__bottom">
+              <div class="event-card-info-description__guests">
+                <img src="/images/icons/check.svg" alt="Attendees" />
+                <span>${event.attendees === undefined ? event.attendees : 0}</span>
+              </div>
+
+              <div class="event-card-info-description__price">
+                <img src="/images/icons/ticket.svg" alt="Price" />
+                <span>Free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      return card
+}
+
+// List cards
+const createListEventCard = (event) => {
+  const card = document.createElement('div');
+  card.classList.add('filter-events__item');
+
+  card.innerHTML = `
+    <div class="event-card__cover">
+      <a href="#">
+        <img 
+          src="${event.image}" 
+          alt="${event.title}" 
+          class="event-card__cover__img"
+        />
+      </a>
+    </div>
+
+    <div class="filter-events__item-info">
+      <div class="filter-events__item-info__date">
+        ${formatEventDate(event.date)}
+      </div>
+
+      <div class="filter-events__item-info__title">
+        ${event.title}
+      </div>
+
+      <div class="filter-events__item-info__categories">
+        ${event.category}
+        <span class="filter-events__item-info__categories-distance">
+          (${event.distance} km)
+        </span>
+      </div>
+
+      <div class="filter-events__item-info__bottom">
+        <div class="filter-events__item-info__bottom__attendees">
+          ${event.attendees === undefined ? event.attendees : 0} attendees
+        </div>
+
+        <div class="filter-events__item-info__bottom__devider">·</div>
+
+        <div class="filter-events__item-info__bottom__left">
+          ${event.attendees ? 150 - event.attendees : 150} spots left
+        </div>
+      </div>
+    </div>
+  `;
+
+  return card
+};
+
+
+
+// ------- FILTERS ----------
+
+// Функция, которая создает фильтры
 const createFilterOptions = () => {
   // Фильтр по дате
   const dateSelect = document.querySelector('#date-select');
@@ -243,6 +370,9 @@ const createFilterOptions = () => {
     }
   }
 };
+
+
+
 
 
 
