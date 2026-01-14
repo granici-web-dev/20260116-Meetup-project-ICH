@@ -248,7 +248,7 @@ const createListEventCard = (event) => {
 
       <div class="filter-events__item-info__bottom">
         <div class="filter-events__item-info__bottom__attendees">
-          ${event.attendees === undefined ? event.attendees : 0} attendees
+          ${event.attendees === undefined ? 0 : event.attendees} attendees
         </div>
 
         <div class="filter-events__item-info__bottom__devider">·</div>
@@ -274,12 +274,12 @@ const showListEvents = (eventsList) => {
     return container.innerHTML = `<h2 class="not-found-events-title">Events not found</h2>`;
   }
   // Проходимся по массиву
-  eventsStore.forEach((event) => {
+  eventsList.forEach((event) => {
     // Создаем карточку event
     const card = createListEventCard(event);
     // Прикрепляем карточку к container
     container.appendChild(card);
-  })
+  });
 }
 
 // Рендер карточек сеткой
@@ -440,7 +440,7 @@ const filterEvents = () => {
     }
 
     // Проверяем фильтр по distance, если выбранный тип не Any distance и тип не совпадает с выбранным событием возвращаем false
-    if (selectedDistance !== 'Any distance' && event.distance !== selectedDistance) {
+    if (selectedDistance !== 'Any distance' && event.distance > Number(selectedDistance)) {
       return false;
     }
 
@@ -456,3 +456,75 @@ const filterEvents = () => {
   showListEvents(filtered);
 }
 
+// Функция вешания обработчиков событий на select
+const setupFilters = () => {
+  // Проверяю если select находится на этой странице
+  if (dateSelect) {
+    // Для каждого select вешаем обработчик событий change, при изменение любого select, будет запускаться функция filterEvents.
+    dateSelect.addEventListener('change', filterEvents);
+  }
+
+  if (typeSelect) {
+    typeSelect.addEventListener('change', filterEvents);
+  }
+
+  if (distanceSelect) {
+    distanceSelect.addEventListener('change', filterEvents);
+  }
+
+  if (categorySelect) {
+    categorySelect.addEventListener('change', filterEvents);
+  }
+};
+
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+  // Находим все блоки со списком событий и фильтрами
+  const listPage = document.querySelector('.filter-events');
+  const near = document.querySelector('.event-card__wrapper-near');
+  const upcoming = document.querySelector('.event-card__wrapper-upcomming');
+  const upcomingContainer = document.querySelector('.event-card__wrapper-upcomming');
+
+  // Проверяем, если этот контейнер есть на этой странице
+  if (upcomingContainer) {
+    // Добавляем ему класс
+    upcomingContainer.classList.add('not-found-events-title');
+  }
+
+  // Проверяем, если этот элемент есть на этой странице
+  if (listPage) {
+    // Вызываем функцию создание options
+    createFilterOptions();
+    // Вызываем функцию отслеживание изменения select
+    setupFilters();
+    // Рендерим отфильтрованные данные
+    showListEvents(eventsStore);
+  }
+
+  // Проверяем, если этот элемент есть на этой странице
+  if (near) {
+    // Рендерим все events в виде grid-карточек
+    showGridEvents(near, eventsStore);
+  }
+
+  // Проверяем, если этот элемент есть на этой странице
+  if (upcoming) {
+    // Вычисляем дату, для примера поставил дату не сегодняшнюю, чтобы появились хоть какие то карточки
+    const now = new Date(2024, 2, 13, 11, 30);
+    // Перебираем все event
+    const upcomingOnlineEvents = eventsStore.filter((event) => {
+      // Оставляем только те, которые ещё не произошли и имеют тип online
+      return event.date > now && event.type === 'online';
+    });
+
+    // Проверяем если массив пустой
+    if (upcomingOnlineEvents.length === 0) {
+      // Выводим надпись что event небыли найдены
+      upcomingContainer.innerHTML = `<h2 class="not-found-events-title">Events not found</h2>`;
+    } else {
+      // Рендерим events в виде grid-карточек
+      showGridEvents(upcomingContainer, upcomingOnlineEvents);
+    }
+  }
+})
