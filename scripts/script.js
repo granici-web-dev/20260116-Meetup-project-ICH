@@ -97,6 +97,11 @@ const filters = [
   },
 ];
 
+const dateSelect = document.querySelector('#date-select');
+const typeSelect = document.querySelector('#type-select');
+const distanceSelect = document.querySelector('#distance-select');
+const categorySelect = document.querySelector('#category-select');
+
 // Создаю функцию, которая будет показывать дату в выпадающем списке только месяц и день
 const customDate = (date) => {
   // Указываем, что нужен только месяц и день
@@ -156,9 +161,11 @@ const formatEventDate = (date) => {
 
 // Grid cards
 const createGridEventCard = (event) => {
+  // Создаем div для карточки
   const card = document.createElement('div');
+  // Задаем класс для этого div
   card.classList.add('event-card');
-
+  // Создаем разметку для карточки
   card.innerHTML = `
     <div class="event-card__cover">
           <a href="#">
@@ -202,14 +209,16 @@ const createGridEventCard = (event) => {
         </div>
       `;
 
-      return card
+  return card;
 }
 
 // List cards
 const createListEventCard = (event) => {
+  // Создаем div для карточки
   const card = document.createElement('div');
+  // Задаем класс для этого div
   card.classList.add('filter-events__item');
-
+  // Создаем разметку для карточки
   card.innerHTML = `
     <div class="event-card__cover">
       <a href="#">
@@ -254,14 +263,48 @@ const createListEventCard = (event) => {
   return card
 };
 
+// Рендер карточек списком
+const showListEvents = (eventsList) => {
+  // Находим контейнер для списка событий
+  const container = document.querySelector('.filter-events');
+  // Очищаем container
+  container.innerHTML = '';
+  // Проверяем, если container пустой, выводим заголовок, что events не найдены
+  if (eventsList.length === 0) {
+    return container.innerHTML = `<h2 class="not-found-events-title">Events not found</h2>`;
+  }
+  // Проходимся по массиву
+  eventsStore.forEach((event) => {
+    // Создаем карточку event
+    const card = createListEventCard(event);
+    // Прикрепляем карточку к container
+    container.appendChild(card);
+  })
+}
 
+// Рендер карточек сеткой
+const showGridEvents = (container, eventsList) => {
+  container.innerHTML = '';
 
-// ------- FILTERS ----------
+  // Проверяем, если container пустой, выводим заголовок, что events не найдены
+  if (eventsList.length === 0) {
+    return (container.innerHTML = `<h2 class="not-found-events-title">Events not found</h2>`);
+  }
+  // Проходимся по массиву 
+  eventsList.forEach((event) => {
+    // Создаем карточку event
+    const card = createGridEventCard(event);
+    // Прикрепляем карточку к container
+    container.appendChild(card);
+  });
+};
+
+// ------- ФИЛЬТРЫ ----------
 
 // Функция, которая создает фильтры
 const createFilterOptions = () => {
   // Фильтр по дате
-  const dateSelect = document.querySelector('#date-select');
+
   // Проверяем, существует ли он на странице
   if (dateSelect) {
     const dayFilter = filters.find((f) => {
@@ -293,7 +336,6 @@ const createFilterOptions = () => {
   }
 
   // Фильтр по типу
-  const typeSelect = document.querySelector('#type-select');
   // Проверяю, существует ли он на странице
   if (typeSelect) {
     const typeFilter = filters.find((f) => {
@@ -319,7 +361,6 @@ const createFilterOptions = () => {
   }
 
   // Фильтр по distance
-  const distanceSelect = document.querySelector('#distance-select');
   // Проверяю, существует ли он на странице
   if (distanceSelect) {
     const distanceFilter = filters.find((f) => {
@@ -345,7 +386,6 @@ const createFilterOptions = () => {
   }
 
   // Фильтр по category
-  const categorySelect = document.querySelector('#category-select');
   // Проверяю, существует ли он на странице
   if (categorySelect) {
     const categoryFilter = filters.find((f) => {
@@ -373,6 +413,46 @@ const createFilterOptions = () => {
 
 
 
+// Функция для фильтрации событий по выбранным фильтрам
+const filterEvents = () => {
 
+  // Если select отсутствует — используем значение по умолчанию
+  const selectedDate = dateSelect ? dateSelect.value : 'Any date';
+  const selectedType = typeSelect ? typeSelect.value : 'Any type';
+  const selectedDistance = distanceSelect ? distanceSelect.value : 'Any distance'
+  const selectedCategory = categorySelect ? categorySelect.value : 'Any category'
 
+  // Проходимся по масиву events
+  const filtered = eventsStore.filter((event) => {
+    // Проверяем фильтр по дате, если выбранная дата не Any date
+    if (selectedDate !== 'Any date') {
+      // Переводим дату в строку, разбиваем строку на массив и вытаскиваем элемент под индексом 0, это наша дата
+      const eventDateString = event.date.toISOString().split('T')[0];
+      // Сравнаваем нашу дату с выбранной датой, если не совпадает, возвращаем false
+      if (eventDateString !== selectedDate) {
+        return false;
+      }
+    }
+
+    // Проверяем фильтр по типу, если выбранный тип не Any type и тип не совпадает с выбранным событием возвращаем false
+    if (selectedType !== 'Any type' && event.type !== selectedType) {
+      return false;
+    }
+
+    // Проверяем фильтр по distance, если выбранный тип не Any distance и тип не совпадает с выбранным событием возвращаем false
+    if (selectedDistance !== 'Any distance' && event.distance !== selectedDistance) {
+      return false;
+    }
+
+    // Проверяем фильтр по category, если выбранный тип не Any category и тип не совпадает с выбранным событием возвращаем false
+    if (selectedCategory !== 'Any category' && event.category !== selectedCategory) {
+      return false;
+    }
+    // В инном случае, если все совпадает, возвращаем true
+    return true
+  });
+
+  // Рендерим список events
+  showListEvents(filtered);
+}
 
