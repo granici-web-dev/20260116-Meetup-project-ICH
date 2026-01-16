@@ -197,7 +197,7 @@ const createGridEventCard = (event) => {
             <div class="event-card-info-description__bottom">
               <div class="event-card-info-description__guests">
                 <img src="/images/icons/check.svg" alt="Attendees" />
-                <span>${event.attendees === undefined ? event.attendees : 0}</span>
+                <span>${event.attendees === undefined ? 0 : event.attendees}</span>
               </div>
 
               <div class="event-card-info-description__price">
